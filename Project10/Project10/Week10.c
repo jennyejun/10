@@ -3,9 +3,19 @@
 #include <string.h>
 
 int main(void) {
-	char str[30] = "happy C programming";
+	char input[100];
+	int i;
+	FILE* fp;
 
-	printf("문자열 \"%s\"의 길이: %i", str, strlen(str));
+	fp = fopen("sample.txt", "w");
+	
+	for (i = 0;i < 3; i++) {
+		printf("input a word: ");
+		scanf("%s", input);
+		fprintf(fp, "%s\n", input);
+	}
+
+	fclose(fp);
 
 	return 0;
 }
